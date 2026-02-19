@@ -27,7 +27,7 @@ app.post("/items", async (req, res) => {
 
   if (!value) return res.status(400).send("Value required");
 
-  // 🔥 carga CPU exigida por el taller
+  //carga CPU
   let total = 0;
   for (let i = 1; i <= 1000; i++) {
     for (let j = 1; j <= 1000; j++) {
