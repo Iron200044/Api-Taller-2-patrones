@@ -2,8 +2,16 @@ require("dotenv").config();
 
 const express = require("express");
 const pool = require("./db");
+const cors = require("cors");
 
 const app = express();
+
+app.use(cors({
+  origin: "http://127.0.0.1:5500",
+  methods: ["GET", "POST"],
+  allowedHeaders: ["Content-Type"]
+}));
+
 app.use(express.json());
 
 async function initDB() {
